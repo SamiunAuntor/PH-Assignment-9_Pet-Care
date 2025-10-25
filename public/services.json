@@ -1,0 +1,76 @@
+[
+    {
+        "serviceId": 1,
+        "serviceName": "Winter Coat Fitting for Dogs",
+        "providerName": "PawCare Studio",
+        "providerEmail": "info@pawcare.com",
+        "price": 25,
+        "rating": 4.9,
+        "slotsAvailable": 4,
+        "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+        "image": "https://i.ibb.co.com/XkCw4KGn/1.jpg",
+        "category": "Clothing"
+    },
+    {
+        "serviceId": 2,
+        "serviceName": "Pet Sweater Tailoring",
+        "providerName": "CozyPaws",
+        "providerEmail": "hello@cozypaws.com",
+        "price": 28,
+        "rating": 4.8,
+        "slotsAvailable": 5,
+        "description": "Handmade sweaters for small and medium-sized dogs to stay warm this winter.",
+        "image": "https://i.ibb.co.com/XxsV8CYd/6.jpg",
+        "category": "Clothing"
+    },
+    {
+        "serviceId": 3,
+        "serviceName": "Winter Grooming & Paw Treatment",
+        "providerName": "CozyPets Grooming",
+        "providerEmail": "hello@cozypets.com",
+        "price": 30,
+        "rating": 4.8,
+        "slotsAvailable": 3,
+        "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+        "image": "https://i.ibb.co.com/fdWFYRwh/5.jpg",
+        "category": "Grooming"
+    },
+    {
+        "serviceId": 4,
+        "serviceName": "Holiday Nail Trimming & Care",
+        "providerName": "HappyPaws Groomers",
+        "providerEmail": "info@happypaws.com",
+        "price": 18,
+        "rating": 4.6,
+        "slotsAvailable": 4,
+        "description": "Safe nail trimming and winter paw care to prevent cracking and discomfort.",
+        "image": "https://i.ibb.co.com/HT5zNtfG/3.jpg",
+        "category": "Grooming"
+    },
+    {
+        "serviceId": 5,
+        "serviceName": "Winter Paw Massage",
+        "providerName": "PetWell Spa",
+        "providerEmail": "support@petwellspa.com",
+        "price": 20,
+        "rating": 4.8,
+        "slotsAvailable": 6,
+        "description": "Soothing paw massage to improve circulation and comfort during cold months.",
+        "image": "https://i.ibb.co.com/fdfyRH2L/2.jpg",
+        "category": "Wellness"
+    },
+    {
+        "serviceId": 6,
+        "serviceName": "Pet Aromatherapy Session",
+        "providerName": "ZenPaws Wellness",
+        "providerEmail": "contact@zenpaws.com",
+        "price": 35,
+        "rating": 4.9,
+        "slotsAvailable": 3,
+        "description": "Relaxing aromatherapy for pets to reduce stress and winter anxiety.",
+        "image": "https://i.ibb.co.com/nNbt4JQs/4.jpg",
+        "category": "Wellness"
+    }
+]
+
+

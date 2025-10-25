@@ -8,7 +8,7 @@ import message from "../assets/message-circle.png";
 
 const Banner = () => {
     return (
-        <div className="w-11/12 mx-auto mt-32 mb-16">
+        <div className="w-full mx-auto mt-32 mb-16">
 
             {/* Image part */}
             <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden rounded-xl">

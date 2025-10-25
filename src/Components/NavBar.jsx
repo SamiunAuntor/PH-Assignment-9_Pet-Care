@@ -10,14 +10,15 @@ const NavBar = () => {
 
     return (
         <nav className="w-full bg-white shadow-md fixed top-0 z-50">
-            {/* Container: flex for mobile, grid for desktop, animation for larger screens only */}
+            {/* Container */}
             <div className="w-11/12 mx-auto py-3 flex items-center justify-between
                       md:grid md:grid-cols-3 md:items-center
                       animate__animated animate__fadeInDown">
 
-                {/* Left: Logo */}
-                <div className="flex items-center">
+                {/* Left: Logo + Title */}
+                <div className="flex items-center space-x-4">
                     <img src={logo} alt="Logo" className="h-10 w-10" />
+                    <span className="text-2xl font-bold text-gray-800">Pet Care</span>
                 </div>
 
                 {/* Center: Nav Links (Larger screens) */}
@@ -52,10 +53,10 @@ const NavBar = () => {
                         Login
                     </NavLink>
                     <NavLink
-                        to="/register"
+                        to="/signup"
                         className="px-4 py-2 bg-[#1499a8] text-white font-medium rounded-lg cursor-pointer hover:bg-[#0f7f87] transition-colors duration-300 text-center"
                     >
-                        Register
+                        Sign Up
                     </NavLink>
                 </div>
 
@@ -102,11 +103,11 @@ const NavBar = () => {
                                 Login
                             </NavLink>
                             <NavLink
-                                to="/register"
+                                to="/signup"
                                 className="w-full text-center px-4 py-2 bg-[#1499a8] text-white font-medium rounded cursor-pointer hover:bg-[#0f7f87] transition-all duration-300"
                                 onClick={() => setMenuOpen(false)}
                             >
-                                Register
+                                Sign Up
                             </NavLink>
                         </div>
                     </div>
