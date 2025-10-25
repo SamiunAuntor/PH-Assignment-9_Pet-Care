@@ -4,6 +4,8 @@ import HomeLayout from "./Layouts/HomeLayout";
 import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
 import SignUp from "./Pages/SignUp";
+import Services from "./Pages/Services";
+import MyProfile from "./Pages/MyProfile";
 
 
 const router = createBrowserRouter([
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
             {
                 path: "/signup",
                 Component: SignUp,
+            },
+            {
+                path: "/services",
+                Component: Services,
+                loader: () => fetch("/services.json"),
+            },
+            {
+                path: "/profile",
+                Component: MyProfile,
             }
         ]
     },

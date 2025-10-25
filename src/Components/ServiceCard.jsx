@@ -6,7 +6,7 @@ const ServiceCard = ({ serviceName, providerName, price, image, rating }) => {
         <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full">
 
             {/* Image */}
-            <div className="h-52 w-full overflow-hidden">
+            <div className="h-70 w-full overflow-hidden">
                 <img
                     src={image}
                     alt={serviceName}

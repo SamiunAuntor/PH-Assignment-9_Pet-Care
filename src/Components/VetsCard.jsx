@@ -4,7 +4,7 @@ const VetsCard = ({ vet }) => {
     return (
         <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm mx-auto">
             {/* Image */}
-            <div className="h-48 w-full overflow-hidden">
+            <div className="h-60 w-full overflow-hidden">
                 <img
                     src={vet.image}
                     alt={vet.name}

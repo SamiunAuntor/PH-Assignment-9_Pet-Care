@@ -41,7 +41,7 @@ const HomePage = () => {
 
             <div className="winter-care-tips">
                 {/* Winter Care Tips Marquee */}
-                <div className="mt-0 bg-[#e0f7ec] py-3 px-3 rounded-md shadow-sm border border-green-300">
+                <div className="mt-6 bg-[#e0f7ec] py-3 px-3 rounded-md shadow-sm border border-green-300">
                     <Marquee pauseOnHover={true} speed={40} gradient={false}>
                         ❄️ Winter Care Tips for Pets — Keep Them Warm 💖 • Hydrate Regularly 💧 •
                         Protect Paws from Cold Surfaces 🐾 • Avoid Extreme Outdoor Chill 🌨️ •
