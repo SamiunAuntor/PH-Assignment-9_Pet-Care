@@ -57,7 +57,7 @@ const LoginPage = () => {
                     <span className="flex-1 h-px bg-gray-300"></span>
                 </div>
 
-                {/* Google Login Alternative (Lucide icon used) */}
+                {/* Google Login Alternative*/}
                 <button
                     className="w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-md hover:bg-gray-200 transition-all"
                 >

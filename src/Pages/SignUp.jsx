@@ -5,7 +5,6 @@ import { Link } from "react-router";
 const SignUp = () => {
     return (
         <div className="w-full min-h-screen flex justify-center items-center bg-gray-100 px-4 pt-20">
-            {/* ⬆ Added pt-20 for spacing under navbar */}
             <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
 
                 {/* Title */}
