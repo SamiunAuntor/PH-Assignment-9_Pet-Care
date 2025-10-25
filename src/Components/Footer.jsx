@@ -3,7 +3,7 @@ import { Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-gray-900 text-white pt-20 pb-10">
+        <footer className="w-full bg-gray-900 text-white pt-20 pb-10 mb-0">
             {/* 3-column section */}
             <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 {/* Column 1: Contact Info */}

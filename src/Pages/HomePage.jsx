@@ -5,6 +5,8 @@ import ServiceCard from '../Components/ServiceCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
+import Marquee from "react-fast-marquee";
+
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ExpertVets from '../Components/ExpertVets';
@@ -36,6 +38,18 @@ const HomePage = () => {
     return (
         <div className="w-11/12 mx-auto my-10">
             <Banner />
+
+            <div className="winter-care-tips">
+                {/* Winter Care Tips Marquee */}
+                <div className="mt-0 bg-[#e0f7ec] py-3 px-3 rounded-md shadow-sm border border-green-300">
+                    <Marquee pauseOnHover={true} speed={40} gradient={false}>
+                        ❄️ Winter Care Tips for Pets — Keep Them Warm 💖 • Hydrate Regularly 💧 •
+                        Protect Paws from Cold Surfaces 🐾 • Avoid Extreme Outdoor Chill 🌨️ •
+                        Ensure Proper Nutrition for Energy 🍖 • Regular Health Checkups 🩺 ❄️
+                    </Marquee>
+                </div>
+
+            </div>
 
             <div className="my-12">
                 <h2 className="text-3xl font-bold text-center mb-8">Popular Winter Care Services</h2>

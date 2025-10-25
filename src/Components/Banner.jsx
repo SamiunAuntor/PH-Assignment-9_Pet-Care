@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bannerImg from "../assets/banner-img-2.png";
 import diamond from "../assets/diamond.png";
 import discount from "../assets/discount.png";
 import coins from "../assets/coins.png";
 import shield from "../assets/shield-check.png";
 import message from "../assets/message-circle.png";
+import toastMessage from '../toast';
 
 const Banner = () => {
+    const [email, setEmail] = useState('');
+
+    // Click handler function
+    const handleSupportClick = () => {
+        // Show toast
+        toastMessage.success(`Thanks for your interest! We will contact you very soon!`);
+        // Clear email field
+        setEmail('');
+    };
+
     return (
         <div className="w-full mx-auto mt-32 mb-16">
 
@@ -31,9 +42,13 @@ const Banner = () => {
                         <input
                             type="email"
                             placeholder="Your email"
-                            className="px-3 py-2 sm:px-4 sm:py-2 rounded-l-md border border-gray-300 outline-none w-full sm:w-64 bg-white text-gray-900 text-sm sm:text-base"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="px-3 py-2 sm:px-4 sm:py-2 rounded-md border border-gray-300 outline-none w-full sm:w-64 bg-white text-gray-900 text-sm sm:text-base"
                         />
-                        <button className="bg-[#289a0f] text-white px-4 py-2 sm:px-6 sm:py-2 rounded-md sm:rounded-r-md font-semibold hover:bg-green-700 transition-colors text-sm sm:text-base">
+                        <button
+                            onClick={handleSupportClick}
+                            className="bg-[#289a0f] text-white px-4 py-2 sm:px-6 sm:py-2 rounded-md sm:rounded-r-md font-semibold hover:bg-green-700 transition-colors text-sm sm:text-base">
                             Get Support
                         </button>
                     </div>
@@ -48,28 +63,24 @@ const Banner = () => {
                     <span className="font-semibold text-gray-900 text-sm sm:text-base">Trusted Pet Care</span>
                     <span className="text-xs sm:text-sm text-gray-500">Certified caregivers</span>
                 </div>
-
                 {/* Item 2 */}
                 <div className="flex flex-col items-center text-center space-y-1">
                     <img src={discount} alt="discount" className="w-6 h-6 sm:w-8 sm:h-8" />
                     <span className="font-semibold text-gray-900 text-sm sm:text-base">Tailored Services</span>
                     <span className="text-xs sm:text-sm text-gray-500">Custom care plans</span>
                 </div>
-
                 {/* Item 3 */}
                 <div className="flex flex-col items-center text-center space-y-1">
                     <img src={shield} alt="shield" className="w-6 h-6 sm:w-8 sm:h-8" />
                     <span className="font-semibold text-gray-900 text-sm sm:text-base">Real-time Updates</span>
                     <span className="text-xs sm:text-sm text-gray-500">Stay connected</span>
                 </div>
-
                 {/* Item 4 */}
                 <div className="flex flex-col items-center text-center space-y-1">
                     <img src={coins} alt="coins" className="w-6 h-6 sm:w-8 sm:h-8" />
                     <span className="font-semibold text-gray-900 text-sm sm:text-base">Affordable Pricing</span>
                     <span className="text-xs sm:text-sm text-gray-500">Transparent rates</span>
                 </div>
-
                 {/* Item 5 */}
                 <div className="flex flex-col items-center text-center space-y-1">
                     <img src={message} alt="message" className="w-6 h-6 sm:w-8 sm:h-8" />
