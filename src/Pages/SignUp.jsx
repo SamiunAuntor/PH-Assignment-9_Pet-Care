@@ -63,6 +63,8 @@ const SignUp = () => {
 
             toastMessage.success(`Welcome ${name}! ✅`);
             e.target.reset();
+            // Wait for auth state to update
+            await new Promise(resolve => setTimeout(resolve, 100));
             navigate("/");
         } catch (err) {
             let message;
@@ -91,6 +93,8 @@ const SignUp = () => {
             const displayName = user.displayName || user.email?.split('@')[0] || 'User';
 
             toastMessage.success(`Welcome ${displayName}! ✅`);
+            // Wait for auth state to update
+            await new Promise(resolve => setTimeout(resolve, 100));
             navigate(from, { replace: true });
         } catch (err) {
             console.error(err);

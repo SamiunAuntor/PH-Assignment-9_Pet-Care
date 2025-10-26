@@ -1,13 +1,17 @@
-import React from 'react';
-import user from "../assets/user.jpg";
+import React, { useContext } from 'react';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import userDefault from "../assets/user.jpg";
 
 const MyProfile = () => {
-    // Static user data
-    const userData = {
-        name: "Samiun Alim Auntor",
-        email: "samiun@example.com",
-        image: user,
-    };
+    const { user } = useContext(AuthContext);
+
+    if (!user) {
+        return (
+            <div className="min-h-screen flex justify-center items-center">
+                <p className="text-gray-700 text-lg">You are not logged in.</p>
+            </div>
+        );
+    }
 
     return (
         <div className='min-h-screen'>
@@ -17,15 +21,15 @@ const MyProfile = () => {
                 <div className="flex flex-col items-center gap-6">
                     {/* Profile Image */}
                     <img
-                        src={userData.image}
-                        alt={userData.name}
+                        src={user.photoURL || userDefault}
+                        alt={user.displayName || "User"}
                         className="w-32 h-32 rounded-full object-cover border-4 border-[#289a0f]"
                     />
 
                     {/* User Info */}
                     <div className="text-center">
-                        <h3 className="text-2xl font-semibold text-gray-900">{userData.name}</h3>
-                        <p className="text-gray-600">{userData.email}</p>
+                        <h3 className="text-2xl font-semibold text-gray-900">{user.displayName || "No Name"}</h3>
+                        <p className="text-gray-600">{user.email}</p>
                     </div>
 
                     {/* Update Profile Button */}
