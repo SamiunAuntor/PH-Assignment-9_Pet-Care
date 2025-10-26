@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { LogIn } from "lucide-react";
+import { LogIn, Eye, EyeOff } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import toastMessage from "../toast";
@@ -23,6 +23,7 @@ const LoginPage = () => {
         email: "",
         password: ""
     });
+    const [showPassword, setShowPassword] = useState(false);
 
     // Handle input change
     const handleChange = (e) => {
@@ -95,15 +96,28 @@ const LoginPage = () => {
 
                     <div>
                         <label className="text-gray-800 font-medium">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Enter your password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-green-600"
-                        />
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="Enter your password"
+                                value={formData.password}
+                                onChange={handleChange}
+                                required
+                                className="w-full px-4 py-2 mt-1 pr-10 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-green-600"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                            >
+                                {showPassword ? (
+                                    <EyeOff className="h-5 w-5 text-gray-400" />
+                                ) : (
+                                    <Eye className="h-5 w-5 text-gray-400" />
+                                )}
+                            </button>
+                        </div>
                     </div>
 
                     <button
@@ -113,6 +127,17 @@ const LoginPage = () => {
                         Login
                     </button>
                 </form>
+
+                {/* Forgot Password Link */}
+                <div className="text-right mt-2">
+                    <Link 
+                        to="/forgot-password" 
+                        state={{ email: formData.email }}
+                        className="text-sm text-[#289a0f] hover:text-green-700 font-medium"
+                    >
+                        Forgot Password?
+                    </Link>
+                </div>
 
                 <div className="flex items-center my-4">
                     <span className="flex-1 h-px bg-gray-300"></span>

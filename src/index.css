@@ -2,3 +2,6 @@
 @plugin "daisyui";
 
 
+a.active {
+    color: #d5c39c;
+}

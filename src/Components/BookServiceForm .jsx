@@ -24,7 +24,7 @@ const BookServiceForm = () => {
                     placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none border-0 focus:ring-2 focus:ring-[#289a0f]"
+                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#289a0f]"
                     required
                 />
 
@@ -33,7 +33,7 @@ const BookServiceForm = () => {
                     placeholder="Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 border-0 focus:ring-[#289a0f]"
+                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#289a0f]"
                     required
                 />
 

@@ -6,9 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Marquee from "react-fast-marquee";
-
-
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Shield, Heart, Clock, Award } from 'lucide-react';
 import ExpertVets from '../Components/ExpertVets';
 
 const HomePage = () => {
@@ -75,12 +73,12 @@ const HomePage = () => {
                     {Array.isArray(servicesData) && servicesData.map((service) => (
                         <SwiperSlide key={service.serviceId}>
                             <ServiceCard
+                                serviceId={service.serviceId}
                                 serviceName={service.serviceName}
                                 providerName={service.providerName}
                                 price={service.price}
                                 image={service.image}
                                 rating={service.rating}
-                                service={service}
                             />
                         </SwiperSlide>
                     ))}
@@ -106,6 +104,62 @@ const HomePage = () => {
             </div>
             <div className="expert-vets">
                 <ExpertVets></ExpertVets>
+            </div>
+
+            {/* Why Choose Us Section */}
+            <div className="my-16">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Pet Care?</h2>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We're committed to providing the best care for your beloved pets with professional services and genuine love.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Professional Care */}
+                    <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-[#289a0f] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Shield className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Professional Care</h3>
+                        <p className="text-gray-600">
+                            Certified professionals with years of experience in pet care and grooming services.
+                        </p>
+                    </div>
+
+                    {/* Loving Service */}
+                    <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-[#289a0f] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Heart className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Loving Service</h3>
+                        <p className="text-gray-600">
+                            We treat every pet with love, care, and respect as if they were our own family members.
+                        </p>
+                    </div>
+
+                    {/* Flexible Scheduling */}
+                    <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-[#289a0f] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Clock className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Flexible Scheduling</h3>
+                        <p className="text-gray-600">
+                            Book appointments that fit your schedule with our convenient online booking system.
+                        </p>
+                    </div>
+
+                    {/* Quality Guarantee */}
+                    <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-[#289a0f] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Award className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Quality Guarantee</h3>
+                        <p className="text-gray-600">
+                            100% satisfaction guarantee on all our services with premium quality care standards.
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>

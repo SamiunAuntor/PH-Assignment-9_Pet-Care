@@ -1,17 +1,15 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { useNavigate } from 'react-router';
 import userDefault from "../assets/user.jpg";
 
 const MyProfile = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    if (!user) {
-        return (
-            <div className="min-h-screen flex justify-center items-center">
-                <p className="text-gray-700 text-lg">You are not logged in.</p>
-            </div>
-        );
-    }
+    const handleUpdateClick = () => {
+        navigate('/update-profile');
+    };
 
     return (
         <div className='min-h-screen'>
@@ -23,7 +21,7 @@ const MyProfile = () => {
                     <img
                         src={user.photoURL || userDefault}
                         alt={user.displayName || "User"}
-                        className="w-32 h-32 rounded-full object-cover border-4 border-[#289a0f]"
+                        className="w-32 h-32 rounded-full object-cover"
                     />
 
                     {/* User Info */}
@@ -34,6 +32,7 @@ const MyProfile = () => {
 
                     {/* Update Profile Button */}
                     <button
+                        onClick={handleUpdateClick}
                         className="mt-4 px-6 py-2 bg-[#289a0f] text-white rounded-md font-semibold hover:bg-green-700 transition"
                     >
                         Update Profile

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Star } from "lucide-react";
+import { Link } from "react-router";
 
-const ServiceCard = ({ serviceName, providerName, price, image, rating }) => {
+const ServiceCard = ({ serviceName, providerName, price, image, rating, serviceId }) => {
     return (
         <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full">
 
@@ -31,9 +32,12 @@ const ServiceCard = ({ serviceName, providerName, price, image, rating }) => {
                 <p className="text-blue-600 font-bold text-base">${price}</p>
 
                 {/* Button */}
-                <button className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                <Link
+                    to={`/service/${serviceId}`}
+                    className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition text-center block"
+                >
                     View Details
-                </button>
+                </Link>
             </div>
         </div>
     );

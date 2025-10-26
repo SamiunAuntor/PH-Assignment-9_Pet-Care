@@ -64,8 +64,9 @@ const NavBar = () => {
                                 <img
                                     src={user.photoURL || userDefault}
                                     alt="User"
-                                    className="h-8 w-8 rounded-full border border-gray-300"
+                                    className="h-9 w-9 rounded-full object-cover"
                                 />
+
                                 {/* Tooltip below avatar */}
                                 <span className="absolute top-full mt-1 left-1/2 -translate-x-1/2
                                                  bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0

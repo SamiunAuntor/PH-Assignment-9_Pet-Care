@@ -18,6 +18,7 @@ const Services = () => {
                 {Array.isArray(servicesData) && servicesData.map(service => (
                     <ServiceCard
                         key={service.serviceId}
+                        serviceId={service.serviceId}
                         serviceName={service.serviceName}
                         providerName={service.providerName}
                         price={service.price}

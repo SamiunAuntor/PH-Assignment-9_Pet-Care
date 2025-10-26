@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { LogIn } from "lucide-react";
+import { LogIn, Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile, GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
@@ -16,6 +16,7 @@ const SignUp = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const [errorMessage, setErrorMessage] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     // Password validation function
     const validatePassword = (password) => {
@@ -151,22 +152,35 @@ const SignUp = () => {
 
                     <div>
                         <label className="text-gray-800 font-medium">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Enter a strong password"
-                            className="w-full px-4 py-2 mt-1 rounded-md border border-gray-300
-                            focus:ring-2 focus:ring-green-600 outline-none"
-                            required
-                            onChange={(e) => {
-                                if (e.target.value) {
-                                    const passwordError = validatePassword(e.target.value);
-                                    setErrorMessage(passwordError);
-                                } else {
-                                    setErrorMessage("");
-                                }
-                            }}
-                        />
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="Enter a strong password"
+                                className="w-full px-4 py-2 mt-1 pr-10 rounded-md border border-gray-300
+                                focus:ring-2 focus:ring-green-600 outline-none"
+                                required
+                                onChange={(e) => {
+                                    if (e.target.value) {
+                                        const passwordError = validatePassword(e.target.value);
+                                        setErrorMessage(passwordError);
+                                    } else {
+                                        setErrorMessage("");
+                                    }
+                                }}
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                            >
+                                {showPassword ? (
+                                    <EyeOff className="h-5 w-5 text-gray-400" />
+                                ) : (
+                                    <Eye className="h-5 w-5 text-gray-400" />
+                                )}
+                            </button>
+                        </div>
                         {errorMessage && (
                             <p className="text-xs text-red-600 mt-1">{errorMessage}</p>
                         )}
