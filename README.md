@@ -4,7 +4,7 @@
 PawCare is a comprehensive platform designed for pet owners to ensure their furry friends receive the best care possible. Users can explore various pet care services, book appointments with expert veterinarians, access grooming options, and receive professional advice—all in one user-friendly interface.
 
 ## Live URL
-[Visit PawCare](https://pawcare-pets.web.app/)
+[Visit PawCare](https://pet-care-e7a9f.web.app/)
 
 ## Key Features
 - **Single Page Application (SPA)** with smooth navigation using React Router
@@ -61,7 +61,7 @@ PawCare is a comprehensive platform designed for pet owners to ensure their furr
 ## How to Run Locally
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/pet-care.git
+   git clone https://github.com/SamiunAuntor/PH-Assignment-9_Pet-Care.git
    ```
 2. Navigate to the project directory
    ```
