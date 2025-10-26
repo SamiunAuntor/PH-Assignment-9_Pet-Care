@@ -1,36 +1,96 @@
 import React, { useState } from 'react';
-import bannerImg from "../assets/banner-img-2.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+
+// Banner images
+import bannerImg1 from "../assets/banner-img-2.jpeg";
+import bannerImg2 from "../assets/banner-2.jpg";
+import bannerImg3 from "../assets/banner-3.jpg";
+import bannerImg4 from "../assets/banner-4.jpg";
+import bannerImg5 from "../assets/banner-5.jpg";
+import bannerImg6 from "../assets/banner-6.jpg";
+
+// Info tube images
 import diamond from "../assets/diamond.png";
 import discount from "../assets/discount.png";
 import coins from "../assets/coins.png";
 import shield from "../assets/shield-check.png";
 import message from "../assets/message-circle.png";
+
 import toastMessage from '../toast';
 
 const Banner = () => {
     const [email, setEmail] = useState('');
 
-    // Click handler function
     const handleSupportClick = () => {
-        // Show toast
         toastMessage.success(`Thanks for your interest! We will contact you very soon!`);
-        // Clear email field
         setEmail('');
     };
 
+    // Array of banner images
+    const bannerImages = [
+        {
+            src: bannerImg1,
+            alt: "A Cat"
+        },
+        {
+            src: bannerImg4,
+            alt: "A cat"
+        },
+        {
+            src: bannerImg3,
+            alt: "A cat"
+        },
+        {
+            src: bannerImg2,
+            alt: "A pet"
+        },
+        {
+            src: bannerImg5, 
+            alt: 'Cozy cat'
+        },
+        {
+            src: bannerImg6,
+            alt: 'Warm dog'
+        }
+    ];
+
     return (
         <div className="w-full mx-auto mt-32 mb-16">
-
-            {/* Image part */}
+            {/* Swiper Image part */}
             <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden rounded-xl">
-                <img
-                    src={bannerImg}
-                    alt="Banner"
-                    className="w-full h-full object-cover object-top"
-                />
+                <Swiper
+                    modules={[Autoplay, Pagination, EffectFade]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    autoplay={{
+                        delay: 3000, 
+                        disableOnInteraction: false,
+                    }}
+                    loop={true} 
+                    effect="fade"
+                    fadeEffect={{
+                        crossFade: true,
+                    }}
+                    pagination={{ clickable: true }} 
+                    className="h-full" 
+                >
+                    {bannerImages.map((img, index) => (
+                        <SwiperSlide key={index}>
+                            <img
+                                src={img.src}
+                                alt={img.alt}
+                                className="w-full h-full object-cover object-center"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
-                {/* Left-aligned content */}
-                <div className="absolute left-4 sm:left-8 md:left-16 top-16 sm:top-24 md:top-36 text-left text-gray-900 space-y-4 sm:space-y-5 md:space-y-6 max-w-xs sm:max-w-md md:max-w-lg w-1/2 sm:w-2/3 md:w-full">
+                {/* Left-aligned content overlay */}
+                <div className="absolute left-4 sm:left-8 md:left-16 top-16 sm:top-24 md:top-36 text-left text-gray-900 space-y-4 sm:space-y-5 md:space-y-6 max-w-xs sm:max-w-md md:max-w-lg w-1/2 sm:w-2/3 md:w-full z-10"> {/* Added z-10 to ensure it's on top */}
                     <h1 className="text-2xl sm:text-3xl md:text-6xl font-bold">
                         Where Your Pet Feels at Home!
                     </h1>
