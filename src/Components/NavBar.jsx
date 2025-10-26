@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import logo from "../assets/logo.png";
 import user from "../assets/user.jpg";
 import "animate.css";
+import toastMessage from '../toast';
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
