@@ -1,16 +1,95 @@
-# React + Vite
+# PawCare - Complete Pet Care Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+PawCare is a comprehensive platform designed for pet owners to ensure their furry friends receive the best care possible. Users can explore various pet care services, book appointments with expert veterinarians, access grooming options, and receive professional advice—all in one user-friendly interface.
 
-Currently, two official plugins are available:
+## Live URL
+[Visit PawCare](https://pawcare-pets.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- **Single Page Application (SPA)** with smooth navigation using React Router
+- **User Authentication System**
+  - Email/Password Login and Registration
+  - Google Sign-in Integration
+  - Password Reset Functionality
+- **Protected Routes** for authenticated users only
+- **User Profile Management**
+  - View Profile Information
+  - Update Profile Details
+- **Service Exploration**
+  - Browse Various Pet Care Services
+  - View Detailed Service Information
+  - Book Services with Form Submission
+- **Expert Veterinarians Section** showcasing professional profiles
+- **Responsive Design** optimized for mobile, tablet, and desktop devices
+- **Interactive UI Elements** with smooth animations
+- **Toast Notifications** for user feedback on actions
 
-## React Compiler
+## Technologies Used
+- **Frontend Framework:** React 19
+- **Routing:** React Router 7
+- **Styling:**
+  - Tailwind CSS 4
+  - DaisyUI 5
+- **Authentication:** Firebase Authentication
+- **UI Components/Libraries:**
+  - Swiper.js for carousels
+  - Lucide React for icons
+  - React Fast Marquee for scrolling content
+  - Animate.css for animations
+- **Notifications:** React Hot Toast
+- **Build Tool:** Vite 7
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## NPM Packages Used
+```
+"dependencies": {
+  "@tailwindcss/vite": "^4.1.16",
+  "animate.css": "^4.1.1",
+  "daisyui": "^5.3.9",
+  "firebase": "^12.4.0",
+  "lucide-react": "^0.548.0",
+  "react": "^19.1.1",
+  "react-dom": "^19.1.1",
+  "react-fast-marquee": "^1.6.5",
+  "react-hot-toast": "^2.6.0",
+  "react-router": "^7.9.4",
+  "swiper": "^12.0.3",
+  "tailwindcss": "^4.1.16"
+}
+```
 
-## Expanding the ESLint configuration
+## How to Run Locally
+1. Clone the repository
+   ```
+   git clone https://github.com/yourusername/pet-care.git
+   ```
+2. Navigate to the project directory
+   ```
+   cd pet-care
+   ```
+3. Install dependencies
+   ```
+   npm install
+   ```
+4. Start the development server
+   ```
+   npm run dev
+   ```
+5. Open your browser and visit `http://localhost:5173`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+- `/src` - Source code
+  - `/Components` - Reusable UI components
+  - `/Pages` - Application pages
+  - `/Layouts` - Layout components
+  - `/AuthProvider` - Authentication context and configuration
+  - `/assets` - Images and static assets
+
+## Future Enhancements
+- Appointment scheduling system
+- Pet health records management
+- Online consultation with veterinarians
+- E-commerce section for pet supplies
+
+---
+© 2024 PawCare. All rights reserved.
